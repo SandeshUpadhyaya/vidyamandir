@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Maharishi Vidya Mandir </title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+<link rel="stylesheet" type="text/css" href="assets/css/font.css">
+<link rel="stylesheet" type="text/css" href="assets/css/li-scroller.css">
+<link rel="stylesheet" type="text/css" href="assets/css/slick.css">
+<link rel="stylesheet" type="text/css" href="assets/css/jquery.fancybox.css">
+<link rel="stylesheet" type="text/css" href="assets/css/theme.css">
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+<style>.form{
+    position: absolute;
+    top: 5%;
+    left:30%;
+    z-index: 1;
+    background:lightgray;
+    width: 35%;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+
+  }
+  .account{background:#d083cf;border:2px solid #d083cf: none;margin:2% 2% 2% 2%;}
+  .form input[type=text],input[type=password],input[type=date],input[type=number]{
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    border-radius: 200px;
+  }
+  select#soflow, select#soflow-color {
+   -webkit-appearance: button;
+   -webkit-border-radius: 2px;
+   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+   -webkit-padding-end: 20px;
+   -webkit-padding-start: 2px;
+   -webkit-user-select: none;
+   background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+   background-position: 97% center;
+   background-repeat: no-repeat;
+   border: 1px solid #AAA;
+   color: #555;
+   font-size: inherit;
+   margin: 20px;
+   overflow: hidden;
+   padding: 5px 10px;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   width: 300px;
+}
+  .form input[type=submit]
+  {
+    background-color: rgba(7,50,195,0.8);
+      border: none;
+      color: white;
+      padding: 12px 30px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      border-radius: 20px;
+  }
+    .form input[type=submit]:hover
+    {
+      background-color: rgba(7,20,200,0.8);
+      font-weight: bold;
+    }
+  .form .register{
+    display: none;
+  }
+  .avatar
+  {
+ width:65%;
+  height:65%;
+   align:center;
+   border : 2px solid white;
+   border-radius: 100%;
+
+  }
+  .modal{
+  background: rgba(0, 0, 0, 0.5);
+
+  }
+.message
+{
+  font-size: 18px;
+  color:white;
+}
+.message a
+{
+  color:black;
+}
+@media screen and (max-width: 1100px){
+  .modal{
+  align-self:  center;
+  background: rgba(0, 0, 0, 0.5);
+  }
+  .form{
+    position:absolute;
+    left:5%;
+    top :5%;
+     z-index: 1;
+     background:lightgray;
+     width: 90%;
+    padding: 10%;
+     text-align: center;
+     box-shadow: none;
+   }
+   .form input[type=text],input[type=password],input[type=number]{
+     background: #f2f2f2;
+     width: 100%;
+     border: 0;
+     padding: 1.5%;
+   }
+   textarea{
+     background: #f2f2f2;
+     width: 100%;
+     border: 0;
+     padding: 1.5%;
+   }
+   select#soflow, select#soflow-color {
+    -webkit-appearance: button;
+    -webkit-border-radius: 2px;
+    -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    -webkit-padding-end: 20px;
+    -webkit-padding-start: 2px;
+    -webkit-user-select: none;
+    background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+    background-position: 97% center;
+    background-repeat: no-repeat;
+    border: 1px solid #AAA;
+    color: #555;
+    font-size: inherit;
+    margin: 20px;
+    overflow: hidden;
+    padding: 5px 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 300px;
+ }
+   .form input[type=submit]
+   {
+     background-color: rgba(7,50,195,0.8);
+       border: none;
+       color: white;
+       padding: 12px 30px;
+       text-align: center;
+       text-decoration: none;
+       display: inline-block;
+       font-size: 16px;
+       margin: 4px 2px;
+       border-radius: 20px;
+   }
+     .form input[type=submit]:hover
+     {
+       background-color: rgba(7,20,200,0.8);
+       font-weight: bold;
+     }
+   .form .register{
+     display: none;
+   }
+   .avatar
+   {
+  width:65%;
+   height:65%;
+    align:center;
+    border : 2px solid white;
+    border-radius: 100%;
+
+   }
+}</style>
+
+<!--[if lt IE 9]>
+<script src="assets/js/html5shiv.min.js"></script>
+<script src="assets/js/respond.min.js"></script>
+<![endif]-->
+<script language="JavaScript">
+  /**
+    * Disable right-click of mouse, F12 key, and save key combinations on page
+    * By Arthur Gareginyan (arthurgareginyan@gmail.com)
+    * For full source code, visit http://www.mycyberuniverse.com
+    */
+  window.onload = function() {
+    document.addEventListener("contextmenu", function(e){
+      e.preventDefault();
+    }, false);
+    document.addEventListener("keydown", function(e) {
+    //document.onkeydown = function(e) {
+      // "I" key
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+        disabledEvent(e);
+      }
+      // "J" key
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+        disabledEvent(e);
+      }
+      // "S" key + macOS
+      if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+        disabledEvent(e);
+      }
+      // "U" key
+      if (e.ctrlKey && e.keyCode == 85) {
+        disabledEvent(e);
+      }
+      // "F12" key
+      if (event.keyCode == 123) {
+        disabledEvent(e);
+      }
+    }, false);
+    function disabledEvent(e){
+      if (e.stopPropagation){
+        e.stopPropagation();
+      } else if (window.event){
+        window.event.cancelBubble = true;
+      }
+      e.preventDefault();
+      return false;
+    }
+  };
+</script>
+</head>
+<body oncontextmenu="return false;">
+<div id="preloader">
+  <div id="status">&nbsp;</div>
+</div>
+
+<div class="container">
+
+  <header id="header">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="header_bottom">
+          <div class="logo_area"><img src="images/logo.png" class="logo_seen" style="float:left;" alt=""><img src="images/logo.png" class="logo_hidden" style="position:absolute;right:5%" alt=""></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+<!--End of header -->
+  <section id="navArea">
+    <nav class="navbar navbar-inverse" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav main_nav">
+          <li class="active"><a href="index.html"><span class="fa fa-home desktop-home"></span><span class="mobile-show">Home</span></a></li>
+        <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About Us</a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="about.html#home">School profile</a></li>
+              <li><a href="about.html#menu1">Mission Statement</a></li>
+              <li><a href="about.html#menu2">Secretary Message</a></li>
+              <li><a href="about.html#menu3">Faculty</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Academics</a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="academics.html#home">School Uniform</a></li>
+              <li><a href="academics.html#menu1">Educational Links</a></li>
+              <li><a href="academics.html#menu2">Discipline</a></li>
+              </ul>
+          </li>
+          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Admission</a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">Admission Status</a></li>
+              <li><a href="#">Admission Policy</a></li>
+              <li><a href="#">Documents Required</a></li>
+              <li><a href="#">Admission Guidelines</a></li>
+              <li><a href="#">Fee Structure</a></li>
+              <li><a href="#">Subject Contents</a></li>
+              <li><a href="#">Online Application</a></li>
+
+              </ul>
+          </li>
+          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Facilities</a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="facilities.html#home">Labs</a></li>
+              <li><a href="facilities.html#menu1">Library</a></li>
+              <li><a href="facilities.html#menu2">Smart Class</a></li>
+              <li><a href="facilities.html#menu3">Dhanavantari</a></li>
+              </ul>
+          </li>
+          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Activities</a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="activities.html#home">Sports</a></li>
+              <li><a href="activities.html#menu1">Extra Curricular Activities</a></li>
+              <li><a href="activities.html#menu2">Co-Curricular Activities</a></li>
+              <li><a href="activities.html#menu3">Club Activities</a></li>
+              <li><a href="activities.html#menu4">TM & YOGA</a></li>
+              <li><a href="activities.html#menu5">Leap-Start</a></li>
+              <li><a href="activities.html#menu6">OSLA</a></li>
+              <li><a href="activities.html#menu7">HI-BRO</a></li>
+            </ul>
+          </li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="pages/404.html">Events</a></li>
+          <li><a href="pages/404.html">Important Dates</a></li>
+          <li><a href="pages/404.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </nav>
+  </section>
+  <section id="newsSection">
+    <div class="row">
+      <div class="col-lg-12 col-md-12">
+        <div class="latest_newsarea"> <span>Latest News</span>
+          <ul id="ticker01" class="news_sticker">
+            <li><a href="#">My First News Item</a></li>
+            <li><a href="#">My Second News Item</a></li>
+            <li><a href="#">My Third News Item</a></li>
+            <li><a href="#">My Four News Item</a></li>
+            <li><a href="#">My Five News Item</a></li>
+            <li><a href="#">My Six News Item</a></li>
+            <li><a href="#">My Seven News Item</a></li>
+            <li><a href="#">My Eight News Item</a></li>
+            <li><a href="#">My Nine News Item</a></li>
+          </ul>
+          <div class="social_area">
+            <ul class="social_nav">
+
+              <button class="account" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+              <div id="id01" class="modal">
+
+                <!-- Below code to view and asynchronously load login and registration forms -->
+
+                <div class="page">
+                  <div class="form">
+                    <span style="position:relative;right:-10%;" onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal"><p style="width:20%;height:10%;">&times</p></span>
+
+                  <form class="Login" method="post" action="login_controller">
+                  <img class="avatar" src="images/login.jpg" alt="Image not found">
+                    <br />
+                    <br/>
+                    <input type="text" placeholder="Enter Email" name="email" required>
+                    <input type="password" placeholder="Enter Password" name="password" required>
+                    <input type="submit" value="submit">
+                    <p class="message">If not registered <a href="#">Click here</a></p>
+                  </form>
+
+
+                  <form class="register" method="post" action="register_controller">
+                    <input type="text" placeholder="Enter Email " name="email" required>
+                    <input type="text" placeholder="Enter Name " name="name" required>
+                    <input type="number" placeholder="Enter Phone Number " name="phone_number" required>
+                    <input type="text" placeholder="Enter Address Line 1 " name="add_1" required>
+                    <input type="text" placeholder="Enter Address Line 2 " name="add_2" required>
+                    <input type="password" placeholder="Enter Password" name="password" required>
+                    <input type="password" placeholder="Confirm Password" name="cpassword" required>
+                    <input type="submit" value="submit">
+                    <p class="message">If Already Registered <a href="#">Click here</a></p>
+                  </form>
+                </div>
+                </div>
+
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+                <script type="text/javascript">
+                  $('p a').click(function(){
+                  $('form').animate({height: "toggle" ,opacity: "toggle"}, "slow");
+                });
+                </script>
+
+              <script>
+              // Get the modal
+              var modal = document.getElementById('id01');
+
+              // When the user clicks anywhere outside of the modal, close it
+              window.onclick = function(event) {
+                  if (event.target == modal) {
+                      modal.style.display = "none";
+                  }
+              }
+              </script>
+
+
+            </div>
+        		</div>
+
+
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="sliderSection">
+    <div class="row">
+      <div class="col-lg-8 col-md-8 col-sm-8">
+
+        <div class="slick_slider">
+          <div class="single_iteam"> <a href="#"> <img src="images/slider_img4.jpg" alt=""></a>
+            <div class="slider_article">
+              <h2><a class="slider_tittle" href="#">Header 1</a></h2>
+              <p>Description 1</p>
+            </div>
+          </div>
+          <div class="single_iteam"> <a href="#"> <img src="images/slider_img2.jpg" alt=""></a>
+            <div class="slider_article">
+              <h2><a class="slider_tittle" href="#">Header 2</a></h2>
+              <p>Description 2</p>
+            </div>
+          </div>
+          <div class="single_iteam"> <a href="#"> <img src="images/slider_img3.jpg" alt=""></a>
+            <div class="slider_article">
+              <h2><a class="slider_tittle" href="#">Header 3</a></h2>
+              <p>Description 3</p>
+            </div>
+          </div>
+          <div class="single_iteam"> <a href="#"> <img src="images/slider_img1.jpg" alt=""></a>
+            <div class="slider_article">
+              <h2><a class="slider_tittle" href="#">Header 1</a></h2>
+              <p>Description </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4">
+        <div class="latest_post">
+          <h2><span>Principal's Desk</span></h2>
+          <div class="latest_post_container_1">
+            <div id="prev-button"><i class="fa fa-chevron-up"></i></div>
+            <ul class="latest_postnav">
+              <li>
+                <div class="media">
+                  <div class="media-body"> <a href="#" class="catg_title"> Aliquam malesuada diam eget turpis varius 1</a> </div>
+                </div>
+              </li>
+              <li>
+                <div class="media">
+                  <div class="media-body"> <a href="#" class="catg_title"> Aliquam malesuada diam eget turpis varius 2</a> </div>
+                </div>
+              </li>
+              <li>
+                <div class="media">
+                  <div class="media-body"> <a href="#" class="catg_title"> Aliquam malesuada diam eget turpis varius 3</a> </div>
+                </div>
+              </li>
+              <li>
+                <div class="media">
+                  <div class="media-body"> <a href="#" class="catg_title"> Aliquam malesuada diam eget turpis varius 4</a> </div>
+                </div>
+              </li>
+              <li>
+                <div class="media">
+                  <div class="media-body"> <a href="#" class="catg_title"> Aliquam malesuada diam eget turpis varius 2</a> </div>
+                </div>
+              </li>
+            </ul>
+            <div id="next-button"><i class="fa  fa-chevron-down"></i></div>
+          </div>
+          <div class="latest_post_container_2">
+            <h2><span style="background:#d083cf">Downloads</span></h2>
+            <p>Soft copy of <a href="mvm-web.pdf" style="color:blue;" target="#">student Curricular diary</a> is available for download</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contentSection">
+    <div class="row">
+      <div class="col-lg-8 col-md-8 col-sm-8">
+        <div class="left_content">
+          <div class="single_post_content">
+
+            <div class="single_post_content_left"><div id="hide_mobile">          <video width="100%" height="inherit" src="video/small.mp4" controls>
+
+              </video>
+            </div>
+          </div>
+
+            <div class="single_post_content_right" id="mission_statement">
+              <h2><span style="background:#d083cf">School Mission Statement</span></h2>
+              <p style="font-size:1.7rem; font-family:monospace; font-style:oblique; color:black">The school strives to improve the performance of the students every year in
+such a way that at least 40% of the students get into high profile institutions
+and other reputed institutions. It ensures to improve the student's physical
+and mental health through physical fitness programs. Transcendental
+meditation, yoga and pranayama makes the learning environment happy and
+peaceful.</p>
+            </div>
+          </div></div>
+</div>
+<aside class="right_content">
+  <div class="single_sidebar">
+    <h2><span>Notice Board</span></h2>
+    <ul class="spost_nav">
+      <li>
+        <div class="media wow fadeInDown"> <a href="#" class="media-left"> <img alt="" src="images/post_img1.jpg"> </a>
+          <div class="media-body"> <a href="#" class="catg_title"> Aliquam malesuada diam eget turpis varius 1</a> </div>
+        </div>
+      </li>
+      <li>
+        <div class="media wow fadeInDown"> <a href="#" class="media-left"> <img alt="" src="images/post_img2.jpg"> </a>
+          <div class="media-body"> <a href="#" class="catg_title"> Aliquam malesuada diam eget turpis varius 2</a> </div>
+        </div>
+      </li>
+      <li>
+        <div class="media wow fadeInDown"> <a href="#" class="media-left"> <img alt="" src="images/post_img2.jpg"> </a>
+          <div class="media-body"> <a href="#" class="catg_title"> Aliquam malesuada diam eget turpis varius 4</a> </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="single_post_content" id="gallery">
+  <h2><span>Gallery</span></h2>
+  <ul class="photograph_nav  wow fadeInDown">
+    <li>
+      <div class="photo_grid">
+        <figure class="effect-layla"> <a class="fancybox-buttons" data-fancybox-group="button" href="images/photograph_img2.jpg" title="Photography Ttile 1"> <img src="images/photograph_img2.jpg" alt=""/></a> </figure>
+      </div>
+    </li>
+    <li>
+      <div class="photo_grid">
+        <figure class="effect-layla"> <a class="fancybox-buttons" data-fancybox-group="button" href="images/photograph_img3.jpg" title="Photography Ttile 2"> <img src="images/photograph_img3.jpg" alt=""/> </a> </figure>
+      </div>
+    </li>
+    <li>
+      <div class="photo_grid">
+        <figure class="effect-layla"> <a class="fancybox-buttons" data-fancybox-group="button" href="images/photograph_img4.jpg" title="Photography Ttile 3"> <img src="images/photograph_img4.jpg" alt=""/> </a> </figure>
+      </div>
+    </li>
+    <li>
+      <div class="photo_grid">
+        <figure class="effect-layla"> <a class="fancybox-buttons" data-fancybox-group="button" href="images/photograph_img4.jpg" title="Photography Ttile 4"> <img src="images/photograph_img4.jpg" alt=""/> </a> </figure>
+      </div>
+    </li>
+    <li>
+      <div class="photo_grid">
+        <figure class="effect-layla"> <a class="fancybox-buttons" data-fancybox-group="button" href="images/photograph_img2.jpg" title="Photography Ttile 5"> <img src="images/photograph_img2.jpg" alt=""/> </a> </figure>
+      </div>
+    </li>
+    <li>
+      <div class="photo_grid">
+        <figure class="effect-layla"> <a class="fancybox-buttons" data-fancybox-group="button" href="images/photograph_img3.jpg" title="Photography Ttile 6"> <img src="images/photograph_img3.jpg" alt=""/> </a> </figure>
+      </div>
+    </li>
+  </ul>
+</div>
+
+      <div style="width:100%;">
+        <div class="single_post_content">
+        <h2><span style="background:#d083cf">Educational Partners</span></h2>
+        <div id="edu_partners">
+          <img src="images/edu_partner_1.png" alt="Image not found">
+          <img src="images/edu_partner_2.png" alt="Image not found">
+          <img src="images/edu_partner_3.png" alt="Image not found">
+          <img src="images/edu_partner_2.png" alt="Image not found">
+          <img src="images/edu_partner_3.png" alt="Image not found">
+        </div>
+      </div>
+      </div>
+
+
+  <footer id="footer">
+    <div class="footer_top">
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="footer_widget wow fadeInLeftBig">
+            <h2>Maps</h2>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="footer_widget wow fadeInDown">
+            <h2>Important Links</h2>
+            <ul class="tag_nav">
+              <li><a href="#">Principal Appointment</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Fashion</a></li>
+              <li><a href="#">Terms</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="footer_widget wow fadeInRightBig">
+            <h2>Contact</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <address>
+            Perfect News,1238 S . 123 St.Suite 25 Town City 3333,USA Phone: 123-326-789 Fax: 123-546-567
+            </address>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer_bottom">
+    <p>Enter Email for Newsfeed Subscription <input type="email" name="email"></p>
+  </div>
+  </footer>
+</div>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/wow.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/slick.min.js"></script>
+<script src="assets/js/jquery.li-scroller.1.0.js"></script>
+<script src="assets/js/jquery.newsTicker.min.js"></script>
+<script src="assets/js/jquery.fancybox.pack.js"></script>
+<script src="assets/js/custom.js"></script>
+</body>
+</html>
